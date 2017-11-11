@@ -51,10 +51,13 @@ def refresh_accesstoken(token):
 
 def upload_file():
     global access_token
+    global app_id
+    global filename
     my_file = open("sistemas.png", "rb")
     my_bytes = my_file.read()
-    my_url = "https://firebasestorage.googleapis.com/v0/b/testfire-miag5.appspot.com/o/images%2Fsistemas.png"
-    my_type = mimetypes.guess_type("sistemas.png")
+    my_url = "https://firebasestorage.googleapis.com/v0/b/" + \
+        app_id + ".appspot.com/o/images%2F" + filename
+    my_type = mimetypes.guess_type(filename)
     print(my_type[0])
     my_headers = {"Authorization": "Bearer " +
                   access_token, "Content-Type": my_type[0]}
@@ -73,6 +76,8 @@ def upload_file():
 
 refreshToken = 0
 access_token = 0
+app_id = "app_id"
+filename = "filename"
 firebase_apikey = "apikey"
 signin("email", "password")
 refresh_accesstoken(refreshToken)
