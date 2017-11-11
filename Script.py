@@ -53,7 +53,7 @@ def upload_file():
     global access_token
     global app_id
     global filename
-    my_file = open("sistemas.png", "rb")
+    my_file = open(filename, "rb")
     my_bytes = my_file.read()
     my_url = "https://firebasestorage.googleapis.com/v0/b/" + \
         app_id + ".appspot.com/o/images%2F" + filename
