@@ -77,7 +77,7 @@ def upload_file():
 refreshToken = 0
 access_token = 0
 app_id = "app_id"
-filename = "filename"
+filename = "image.png"
 firebase_apikey = "apikey"
 signin("email", "password")
 refresh_accesstoken(refreshToken)
